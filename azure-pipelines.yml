@@ -31,16 +31,19 @@ stages:
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: $(Build.BuildId)
-    - task: Bash@3
-      inputs:
-        targetType: 'inline'
-        script: |
-          git config user.email $(EMAIL)
-          git config user.name '$(user.name)'
-          cat deployment.yaml
-          sed -i 's+eks-url.*:${Build.BuildID}+g' deployment.yaml
-          cat deployment.yaml
-          git add .
-          git commit -m 'Done by Azure Pipeline update k8s manifest: ${Build.BuildID}'
-          git push --force https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/nginx-sample.git {{branch}}
+
+
+
+#    - task: Bash@3
+#      inputs:
+#        targetType: 'inline'
+#        script: |
+#          git config user.email $(EMAIL)
+#          git config user.name '$(user.name)'
+#          cat deployment.yaml
+#          sed -i 's+eks-url.*:${Build.BuildID}+g' deployment.yaml
+#          cat deployment.yaml
+#          git add .
+#          git commit -m 'Done by Azure Pipeline update k8s manifest: ${Build.BuildID}'
+#          git push --force https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/nginx-sample.git
     
