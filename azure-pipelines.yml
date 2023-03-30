@@ -27,7 +27,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'dockerhub'
-        repository: 'rajkumaraute/nginxcustom'
+        repository: '$(DOCKER-REPOSITORY)'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: $(Build.BuildId)
