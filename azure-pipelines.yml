@@ -21,7 +21,6 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: Docker@2
-      diaplayName: docker login
       inputs:
         containerRegistry: 'dockerhub'
         command: 'login'
