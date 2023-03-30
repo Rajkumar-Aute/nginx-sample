@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: nginx-app
-          image: rajkumaraute/nginxcustom:84
+          image: rajkumaraute/nginxcustom:latest
           ports:
             - containerPort: 80
