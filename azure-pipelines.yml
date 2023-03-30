@@ -45,5 +45,5 @@ stages:
           cat deployment.yaml
           git add .
           git commit -m 'Done by Azure Pipeline update k8s manifest: ${Build.BuildID}'
-          git push --force https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/nginx-sample.git $(Build.SourceBranchName)
+          git push --force https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/nginx-sample.git HEAD:$(Build.SourceBranchName)
     
