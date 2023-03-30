@@ -41,7 +41,8 @@ stages:
           git config user.email $(EMAIL)
           git config user.name '$(user.name)'
           cat deployment.yaml
-          sed -i 's+$(DOCKER-REPOSITORY).*:${Build.BuildID}+g' deployment.yaml
+          #sed -i 's+$(DOCKER-REPOSITORY).*:${Build.BuildID}+g' deployment.yaml
+          sed -i 's+rajkumaraute/nginxcustom.*+rajkumaraute/nginxcustom:91+g' deployment.yaml
           cat deployment.yaml
           git add .
           git commit -m 'Done by Azure Pipeline update k8s manifest: ${Build.BuildID}'
