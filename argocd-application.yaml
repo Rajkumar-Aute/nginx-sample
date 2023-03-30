@@ -4,10 +4,10 @@ metadata:
   name: nginx-argo-app
   namespace: argocd
 spec:
-  project: nginx
+  project: default
 
   source:
-    repoURL: https://github.com/Rajkumar-Aute/nginx-sample
+    repoURL: https://github.com/Rajkumar-Aute/nginx-sample.git
     targetRevised: HEAD
     path: .
   destination:
